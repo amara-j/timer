@@ -3,7 +3,7 @@ import Stopwatch from "./Countdown.js";
 import { useState } from "react";
 
 const App = () => {
-  const [countTo, setCountTo] = useState(0);
+  const [countTo, setCountTo] = useState("");
 
   return (
     <div className="App">
@@ -13,7 +13,6 @@ const App = () => {
           Time (seconds)
           <input
             type="number"
-            value={countTo}
             onChange={(e) => {
               setCountTo(e.target.value);
             }}

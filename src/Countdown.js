@@ -1,27 +1,26 @@
 import { useState } from "react";
 
 const Stopwatch = (props) => {
-  const [timeElapsed, updateTimeElapsed] = useState(0);
-  const [isStopped, setIsStopped] = useState(false);
+  const [timeElapsed, updateTimeElapsed] = useState(props.countTo);
 
-  const startTime = (max) => {
-    let startTime = Date.now();
-    var counter = 1;
+  const startTime = (timerLength) => {
+    let origin = Date.now();
+    let targetTime = origin + timerLength;
+    var counter = timerLength;
     const timeCounter = () => {
       let timeStart = Date.now();
       setTimeout(() => {
-        if (counter < max) {
+        if (targetTime - Date.now() > 0 && counter > 0) {
           let fix = Date.now() - timeStart - 1000;
           timeCounter(1000 - fix);
-          counter++;
-          updateTimeElapsed(Math.floor((Date.now() - startTime) / 1000));
+          updateTimeElapsed(counter);
+          counter--;
         } else {
           // execute this event when timer ends
           updateTimeElapsed("Timer done!");
         }
       }, 1000);
     };
-
     return <div>{timeCounter()}</div>;
   };
 
@@ -34,7 +33,6 @@ const Stopwatch = (props) => {
       >
         Start
       </button>
-      <button>Stop</button>
       <div>{timeElapsed}</div>
     </div>
   );
