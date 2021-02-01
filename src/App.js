@@ -14,11 +14,13 @@ const App = () => {
           <input
             type="number"
             value={countTo}
-            onChange={(e) => setCountTo(e.target.value)}
+            onChange={(e) => {
+              setCountTo(e.target.value);
+            }}
           ></input>
         </label>
       </div>
-      <Stopwatch />
+      <Stopwatch countTo={countTo} />
     </div>
   );
 };

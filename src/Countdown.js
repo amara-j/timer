@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Stopwatch = () => {
+const Stopwatch = (props) => {
   const [timeElapsed, updateTimeElapsed] = useState(0);
   const [isStopped, setIsStopped] = useState(false);
 
-  const calculateTime = () => {
+  const startTime = (max) => {
     let startTime = Date.now();
     var counter = 1;
-    const timeCounter = (max) => {
+    const timeCounter = () => {
       let timeStart = Date.now();
       setTimeout(() => {
         if (counter < max) {
@@ -22,19 +22,19 @@ const Stopwatch = () => {
       }, 1000);
     };
 
-    return <div>{timeCounter(20)}</div>;
+    return <div>{timeCounter()}</div>;
   };
 
   return (
     <div>
       <button
         onClick={() => {
-          calculateTime();
+          startTime(props.countTo);
         }}
       >
         Start
       </button>
-      <button onClick={() => setIsStopped(true)}>Stop</button>
+      <button>Stop</button>
       <div>{timeElapsed}</div>
     </div>
   );
