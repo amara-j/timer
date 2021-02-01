@@ -1,7 +1,7 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 const Stopwatch = () => {
-  //   const [timeElapsed, updateTimeElapsed] = useState(0);
+  const [timeElapsed, updateTimeElapsed] = useState(0);
 
   const calculateTime = () => {
     let startTime = Date.now();
@@ -29,15 +29,19 @@ const Stopwatch = () => {
       1000,
       20,
       () => {
-        console.log(Math.floor((Date.now() - startTime) / 1000));
+        updateTimeElapsed(Math.floor((Date.now() - startTime) / 1000));
       },
       () => {
-        console.log("Timer done!");
+        updateTimeElapsed("Timer done!");
       }
     );
   };
-
-  return <button onClick={() => calculateTime()}>Start</button>;
+  return (
+    <div>
+      <button onClick={() => calculateTime()}>Start</button>
+      <div>{timeElapsed}</div>
+    </div>
+  );
 };
 
 export default Stopwatch;
