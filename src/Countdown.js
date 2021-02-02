@@ -4,10 +4,13 @@ import "./App.css";
 
 const Countdown = (props) => {
   const [timeElapsed, updateTimeElapsed] = useState(props.countTo);
+  const circleRadius = 300;
+  const strokeWidth = 4;
+  const circleContainerSize = 2 * circleRadius + 4 * strokeWidth;
 
   useEffect(() => {
     const synth = new Synth().toDestination();
-    const loop = new Loop((time) => {
+    new Loop((time) => {
       synth.triggerAttackRelease("C7", "8n");
     }, "2n").start(0);
     return () => synth.dispose;
@@ -37,14 +40,19 @@ const Countdown = (props) => {
 
   return (
     <div>
-      <svg height="650" width="650">
+      <svg
+        className="progress-ring"
+        height={circleContainerSize}
+        width={circleContainerSize}
+      >
         <circle
+          className="progress-ring__circle"
           cx="50%"
           cy="50%"
-          r="300"
+          r={circleRadius}
           fill="none"
           stroke="black"
-          strokeWidth="4"
+          strokeWidth={strokeWidth}
         />
         <text textAnchor="middle" x="50%" y="50%">
           {timeElapsed}
