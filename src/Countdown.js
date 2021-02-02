@@ -51,7 +51,7 @@ const Countdown = (props) => {
           strokeWidth="4"
         />
         <text textAnchor="middle" x="50%" y="50%">
-          Circle Text
+          {timeElapsed}
         </text>
       </svg>
       <button
@@ -68,7 +68,6 @@ const Countdown = (props) => {
       >
         Stop
       </button>
-      <div>{timeElapsed}</div>
     </div>
   );
 };
