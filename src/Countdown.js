@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Synth, Loop, Transport } from "tone";
 
 const Stopwatch = (props) => {
   const [timeElapsed, updateTimeElapsed] = useState(props.countTo);
 
+  //   useEffect(() => {
+  //     const synth = new Synth().toDestination();
+  //     // return () => synth.dispose;
+  //   }, []);
+
   const startTime = (timerLength) => {
+    const synth = new Synth().toDestination();
+    const loop = new Loop((time) => {
+      synth.triggerAttackRelease("C4", "8n");
+    }, "8n").start(0);
+
     let origin = Date.now();
     let targetTime = origin + timerLength;
     var counter = timerLength;
@@ -18,6 +29,7 @@ const Stopwatch = (props) => {
         } else {
           // execute this event when timer ends
           updateTimeElapsed("Timer done!");
+          Transport.start();
         }
       }, 1000);
     };
