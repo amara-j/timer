@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Synth, Loop, Transport } from "tone";
+import "./App.css";
 
 const Countdown = (props) => {
   const [timeElapsed, updateTimeElapsed] = useState(props.countTo);
@@ -34,6 +35,10 @@ const Countdown = (props) => {
     return <div>{timeCounter()}</div>;
   };
 
+  const stopSound = () => {
+    Transport.stop();
+  };
+
   return (
     <div>
       <button
@@ -43,7 +48,26 @@ const Countdown = (props) => {
       >
         Start
       </button>
-      <div>{timeElapsed}</div>
+      <button
+        onClick={() => {
+          stopSound();
+        }}
+      >
+        Stop
+      </button>
+      <div>
+        {timeElapsed}
+        <svg height="100" width="100">
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="black"
+            fill="white"
+            stroke-width="3"
+          />
+        </svg>
+      </div>
     </div>
   );
 };
