@@ -8,8 +8,8 @@ const Countdown = (props) => {
   useEffect(() => {
     const synth = new Synth().toDestination();
     const loop = new Loop((time) => {
-      synth.triggerAttackRelease("C4", "8n");
-    }, "8n").start(0);
+      synth.triggerAttackRelease("C7", "8n");
+    }, "2n").start(0);
     return () => synth.dispose;
   }, []);
 
@@ -35,10 +35,6 @@ const Countdown = (props) => {
     return <div>{timeCounter()}</div>;
   };
 
-  const stopSound = () => {
-    Transport.stop();
-  };
-
   return (
     <div>
       <svg height="650" width="650">
@@ -47,7 +43,7 @@ const Countdown = (props) => {
           cy="50%"
           r="300"
           fill="none"
-          stroke="#F0CE01"
+          stroke="black"
           strokeWidth="4"
         />
         <text textAnchor="middle" x="50%" y="50%">
@@ -63,7 +59,7 @@ const Countdown = (props) => {
       </button>
       <button
         onClick={() => {
-          stopSound();
+          Transport.stop();
         }}
       >
         Stop
