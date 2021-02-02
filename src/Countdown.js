@@ -5,6 +5,7 @@ import "./App.css";
 const Countdown = (props) => {
   const [timeElapsed, updateTimeElapsed] = useState(props.countTo);
   const circleRadius = 300;
+  const circleCircumference = 2 * Math.pi * circleRadius;
   const strokeWidth = 4;
   const circleContainerSize = 2 * circleRadius + 4 * strokeWidth;
 
@@ -53,6 +54,7 @@ const Countdown = (props) => {
           fill="none"
           stroke="black"
           strokeWidth={strokeWidth}
+          strokeDasharray={"30 60"}
         />
         <text textAnchor="middle" x="50%" y="50%">
           {timeElapsed}
