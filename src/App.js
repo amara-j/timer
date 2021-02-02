@@ -1,5 +1,5 @@
 import "./App.css";
-import Stopwatch from "./Countdown.js";
+import Countdown from "./Countdown.js";
 import { useState } from "react";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
           ></input>
         </label>
       </div>
-      <Stopwatch countTo={countTo} />
+      <Countdown countTo={countTo} />
     </div>
   );
 };
