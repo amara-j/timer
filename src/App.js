@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div className="App">
-      Timer!
+      <Countdown countTo={countTo} />
       <div>
         <label>
           Time (seconds)
@@ -19,7 +19,6 @@ const App = () => {
           ></input>
         </label>
       </div>
-      <Countdown countTo={countTo} />
     </div>
   );
 };

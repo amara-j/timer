@@ -41,6 +41,19 @@ const Countdown = (props) => {
 
   return (
     <div>
+      <svg height="650" width="650">
+        <circle
+          cx="50%"
+          cy="50%"
+          r="300"
+          fill="none"
+          stroke="#F0CE01"
+          strokeWidth="4"
+        />
+        <text textAnchor="middle" x="50%" y="50%">
+          Circle Text
+        </text>
+      </svg>
       <button
         onClick={() => {
           startTime(props.countTo);
@@ -55,19 +68,7 @@ const Countdown = (props) => {
       >
         Stop
       </button>
-      <div>
-        {timeElapsed}
-        <svg height="100" width="100">
-          <circle
-            cx="50"
-            cy="50"
-            r="40"
-            stroke="black"
-            fill="white"
-            stroke-width="3"
-          />
-        </svg>
-      </div>
+      <div>{timeElapsed}</div>
     </div>
   );
 };
