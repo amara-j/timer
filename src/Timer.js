@@ -7,6 +7,7 @@ class Timer extends React.Component {
     this.state = {
       date: new Date(),
       countdown: this.props.countTo,
+      stopped: false,
     };
     const synth = new Synth().toDestination();
     new Loop((time) => {
@@ -20,21 +21,23 @@ class Timer extends React.Component {
         this.tick();
       } else {
         clearInterval(this.timerInterval);
-        console.log("DONE");
         Transport.start();
       }
     }, 1000);
   }
 
   componentWillUnmount() {
+    Transport.stop();
     clearInterval(this.timerInterval);
   }
 
   tick() {
-    this.setState({
-      date: new Date(),
-      countdown: this.state.countdown - 1,
-    });
+    if (this.state.stopped === false) {
+      this.setState({
+        date: new Date(),
+        countdown: this.state.countdown - 1,
+      });
+    }
   }
 
   render() {

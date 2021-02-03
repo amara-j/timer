@@ -17,13 +17,16 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <TimerContainer /> */}
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input type="number" ref={timerValue} />
-        </label>
-        <input type="submit" value="Start" />
-      </form>
+      {timerIsSet ? (
+        <button onClick={() => updateTimerIsSet(false)}>Stop</button>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <label>
+            <input type="number" ref={timerValue} />
+          </label>
+          <input type="submit" value="Start" />
+        </form>
+      )}
       {timerIsSet ? <Timer dateOnLoad={dateOnLoad} countTo={countTo} /> : null}
     </div>
   );
