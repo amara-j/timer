@@ -4,11 +4,11 @@ import "./App.css";
 
 const Countdown = (props) => {
   const countTo = props.countTo;
-  const [timeElapsed, updateTimeElapsed] = useState(props.countTo);
-  const circleRadius = 300;
-  const circleCircumference = 2 * Math.PI * circleRadius;
+  const [currentSecond, updateCurrentSecond] = useState(props.countTo);
+  const radius = 300;
+  const circumference = 2 * Math.PI * radius;
   const strokeWidth = 4;
-  const circleContainerSize = 2 * circleRadius + 4 * strokeWidth;
+  const circleContainerSize = 2 * radius + 4 * strokeWidth;
 
   useEffect(() => {
     const synth = new Synth().toDestination();
@@ -28,11 +28,11 @@ const Countdown = (props) => {
         if (targetTime - Date.now() > 0 && counter > 0) {
           let fix = Date.now() - timeStart - 1000;
           timeCounter(1000 - fix);
-          updateTimeElapsed(counter);
+          updateCurrentSecond(counter);
           counter--;
         } else {
           // execute this event when timer ends
-          updateTimeElapsed("Timer done!");
+          updateCurrentSecond("Timer done!");
           //Transport.start();
         }
       }, 1000);
@@ -51,15 +51,15 @@ const Countdown = (props) => {
           className="progress-ring__circle"
           cx="50%"
           cy="50%"
-          r={circleRadius}
+          r={radius}
           fill="none"
           stroke="black"
           strokeWidth={strokeWidth}
-          strokeDasharray={`${circleCircumference} ${circleCircumference}`}
-          strokeDashoffset={circleCircumference * (1 - timeElapsed / countTo)}
+          strokeDasharray={`${circumference} ${circumference}`}
+          strokeDashoffset={circumference * (1 - currentSecond / countTo)}
         />
         <text textAnchor="middle" x="50%" y="50%">
-          {timeElapsed}
+          {currentSecond}
         </text>
       </svg>
       <button
