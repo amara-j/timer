@@ -1,6 +1,6 @@
 import "./App.css";
 import Timer from "./Timer.js";
-import TimerContainer from "./TimerContainer.js";
+// import TimerContainer from "./TimerContainer.js";
 import { useState, useRef } from "react";
 
 const App = () => {
@@ -17,6 +17,7 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* <TimerContainer percentDone={0.5} /> */}
       {timerIsSet ? (
         <button onClick={() => updateTimerIsSet(false)}>Stop</button>
       ) : (

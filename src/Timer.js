@@ -1,5 +1,6 @@
 import React from "react";
 import { Synth, Loop, Transport } from "tone";
+import CircleAnimation from "./CircleAnimation.js";
 
 class Timer extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Timer extends React.Component {
       date: new Date(),
       countdown: this.props.countTo,
       stopped: false,
+      percentage: 0,
     };
     const synth = new Synth().toDestination();
     new Loop((time) => {
@@ -21,6 +23,7 @@ class Timer extends React.Component {
         this.tick();
       } else {
         clearInterval(this.timerInterval);
+        this.setState({ countdown: "Timer done!" });
         Transport.start();
       }
     }, 1000);
@@ -35,6 +38,8 @@ class Timer extends React.Component {
     if (this.state.stopped === false) {
       this.setState({
         date: new Date(),
+        percentage:
+          (this.props.countTo - this.state.countdown) / this.props.countTo,
         countdown: this.state.countdown - 1,
       });
     }
@@ -44,6 +49,7 @@ class Timer extends React.Component {
     return (
       <div>
         <h2>{this.state.countdown}</h2>
+        <CircleAnimation percentDone={this.state.percentage} />
       </div>
     );
   }
