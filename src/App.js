@@ -1,6 +1,6 @@
 import "./App.css";
 import Timer from "./Timer.js";
-// import TimerContainer from "./TimerContainer.js";
+import CircleBorder from "./CircleBorder.js";
 import { useState, useRef } from "react";
 
 const App = () => {
@@ -17,11 +17,13 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <TimerContainer percentDone={0.5} /> */}
+      <CircleBorder />
       {timerIsSet ? (
-        <button onClick={() => updateTimerIsSet(false)}>Stop</button>
+        <button className="stopButton" onClick={() => updateTimerIsSet(false)}>
+          Stop
+        </button>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form className="setTimerForm" onSubmit={handleSubmit}>
           <label>
             <input type="number" ref={timerValue} />
           </label>

@@ -1,14 +1,50 @@
 .App {
   text-align: center;
 }
-.circle {
+.circle-border {
   height: 25px;
   width: 25px;
-  background-color: black;
   border-radius: 50%;
   display: inline-block;
 }
 
-.progress-ring__circle {
+.circle-border-container {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+}
+
+.progress-ring-circle-container {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+}
+
+.progress-ring-circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
   transition: stroke-dashoffset 0.5s;
+}
+
+.countdownDiv {
+  position: absolute;
+  /* abstract height & width pls! */
+  height: 616px;
+  width: 616px;
+  top: 45%;
+  left: 25%;
+}
+
+.setTimerForm {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+}
+
+.stopButton {
+  position: absolute;
+  top: 45%;
+  left: 50%;
 }

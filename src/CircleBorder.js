@@ -1,32 +1,29 @@
 import "./App.css";
 
-const CircleAnimation = (props) => {
+const CircleBorder = () => {
   const radius = 300;
-  const circumference = 2 * Math.PI * radius;
   const strokeWidth = 4;
   const circleContainerSize = 2 * radius + 4 * strokeWidth;
 
   return (
     <div>
       <svg
-        className="progress-ring-circle-container"
+        className="circle-border-container"
         height={circleContainerSize}
         width={circleContainerSize}
       >
         <circle
-          className="progress-ring-circle"
+          className="circle-border"
           cx="50%"
           cy="50%"
-          r={radius}
+          r={radius - strokeWidth - 1}
           fill="none"
-          stroke="gold"
+          stroke="black"
           strokeWidth={strokeWidth}
-          strokeDasharray={`${circumference} ${circumference}`}
-          strokeDashoffset={circumference * (1 - props.percentDone)}
         />
       </svg>
     </div>
   );
 };
 
-export default CircleAnimation;
+export default CircleBorder;

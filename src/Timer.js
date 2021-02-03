@@ -48,7 +48,7 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
-        <h2>{this.state.countdown}</h2>
+        <div className="countdownDiv">{this.state.countdown}</div>
         <CircleAnimation percentDone={this.state.percentage} />
       </div>
     );
