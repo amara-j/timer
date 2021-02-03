@@ -12,18 +12,18 @@ class Timer extends React.Component {
       percentage: 0,
     };
     const synth = new Synth().toDestination();
-    new Loop((time) => {
+    new Loop(() => {
       synth.triggerAttackRelease("C7", "8n");
     }, "2n").start(0);
   }
 
   componentDidMount() {
     this.timerInterval = setInterval(() => {
-      if (this.state.countdown > 0) {
+      if (this.state.countdown > 1) {
         this.tick();
       } else {
         clearInterval(this.timerInterval);
-        this.setState({ countdown: "Timer done!" });
+        this.setState({ countdown: "Timer done!", percentage: 1 });
         Transport.start();
       }
     }, 1000);

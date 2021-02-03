@@ -19,10 +19,19 @@ const CircleAnimation = (props) => {
           cy="50%"
           r={radius}
           fill="none"
-          stroke="black"
+          stroke="#62cbf5"
           strokeWidth={strokeWidth}
           strokeDasharray={`${circumference} ${circumference}`}
           strokeDashoffset={circumference * (1 - props.percentDone)}
+        />
+        <circle
+          className="circle"
+          cx="50%"
+          cy="50%"
+          r={radius - strokeWidth - 1}
+          fill="none"
+          stroke="black"
+          strokeWidth={strokeWidth}
         />
       </svg>
     </div>
