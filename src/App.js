@@ -5,13 +5,19 @@ import { useState, useRef } from "react";
 
 const App = () => {
   const dateOnLoad = new Date();
-  const timerValue = useRef(null);
+  const inputSeconds = useRef(null);
+  const inputMinutes = useRef(null);
+  const inputHours = useRef(null);
   const [timerIsSet, updateTimerIsSet] = useState(false);
   const [countTo, updateCountTo] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateCountTo(timerValue.current.value);
+    const totalInput =
+      Number(inputSeconds.current.value) +
+      60 * Number(inputMinutes.current.value) +
+      3600 * Number(inputHours.current.value);
+    updateCountTo(totalInput);
     updateTimerIsSet(true);
   };
 
@@ -26,12 +32,36 @@ const App = () => {
         <form className="setTimerForm" onSubmit={handleSubmit}>
           <label>
             <input
-              className="secondsInput"
+              className="timerInput"
               type="number"
-              ref={timerValue}
+              ref={inputHours}
               min="0"
               max="60"
+              defaultValue="0"
             />
+            h
+          </label>
+          <label>
+            <input
+              className="timerInput"
+              type="number"
+              ref={inputMinutes}
+              min="0"
+              max="60"
+              defaultValue="0"
+            />
+            m
+          </label>
+          <label>
+            <input
+              className="timerInput"
+              type="number"
+              ref={inputSeconds}
+              min="0"
+              max="60"
+              defaultValue="0"
+            />{" "}
+            s
           </label>
           <input type="submit" value="Start" />
         </form>
