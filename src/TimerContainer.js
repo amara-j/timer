@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Synth, Loop, Transport } from "tone";
 import "./App.css";
 
-const Countdown = (props) => {
+const TimerContainer = (props) => {
   const countTo = props.countTo;
   const [currentSecond, updateCurrentSecond] = useState(props.countTo);
   const radius = 300;
@@ -62,22 +62,8 @@ const Countdown = (props) => {
           {currentSecond}
         </text>
       </svg>
-      <button
-        onClick={() => {
-          startTime(props.countTo);
-        }}
-      >
-        Start
-      </button>
-      <button
-        onClick={() => {
-          Transport.stop();
-        }}
-      >
-        Stop
-      </button>
     </div>
   );
 };
 
-export default Countdown;
+export default TimerContainer;

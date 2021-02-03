@@ -3,7 +3,10 @@ import React from "react";
 class Timer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date(), timeElapsed: 0 };
+    this.state = {
+      date: new Date(),
+      countdown: this.props.countTo,
+    };
   }
 
   componentDidMount() {
@@ -17,7 +20,7 @@ class Timer extends React.Component {
   tick() {
     this.setState({
       date: new Date(),
-      timeElapsed: this.state.timeElapsed + 1,
+      countdown: this.state.countdown - 1,
     });
   }
 
@@ -25,8 +28,7 @@ class Timer extends React.Component {
     return (
       <div>
         <h1>Count down from {this.props.countTo}</h1>
-        <h2>It's been {this.state.timeElapsed} seconds</h2>
-        <h2>Countdown: {this.props.countTo - this.state.timeElapsed}</h2>
+        <h2>Countdown: {this.state.countdown}</h2>
       </div>
     );
   }

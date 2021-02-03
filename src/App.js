@@ -1,5 +1,6 @@
 import "./App.css";
-import Timer from "./NewTimer.js";
+import Timer from "./Timer.js";
+import TimerContainer from "./TimerContainer.js";
 import { useState, useRef } from "react";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <TimerContainer />
       <form onSubmit={handleSubmit}>
         <label>
           <input type="number" ref={timerValue} />
