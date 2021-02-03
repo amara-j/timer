@@ -25,7 +25,13 @@ const App = () => {
       ) : (
         <form className="setTimerForm" onSubmit={handleSubmit}>
           <label>
-            <input type="number" ref={timerValue} />
+            <input
+              className="secondsInput"
+              type="number"
+              ref={timerValue}
+              min="0"
+              max="60"
+            />
           </label>
           <input type="submit" value="Start" />
         </form>

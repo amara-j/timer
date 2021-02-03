@@ -19,7 +19,7 @@ const CircleAnimation = (props) => {
           cy="50%"
           r={radius}
           fill="none"
-          stroke="gold"
+          stroke="#2CC8DD"
           strokeWidth={strokeWidth}
           strokeDasharray={`${circumference} ${circumference}`}
           strokeDashoffset={circumference * (1 - props.percentDone)}
