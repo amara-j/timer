@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const App = () => {
   const [countTo, setCountTo] = useState("");
+  const [timerVal, setTimerVal] = useState(0);
 
   return (
     <div className="App">
@@ -14,9 +15,14 @@ const App = () => {
           <input
             type="number"
             onChange={(e) => {
-              setCountTo(e.target.value);
+              setTimerVal(e.target.value);
             }}
           ></input>
+          <input
+            type="submit"
+            value="Go"
+            onClick={() => setCountTo(timerVal)}
+          />
         </label>
       </div>
     </div>

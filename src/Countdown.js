@@ -33,7 +33,7 @@ const Countdown = (props) => {
         } else {
           // execute this event when timer ends
           updateTimeElapsed("Timer done!");
-          Transport.start();
+          //Transport.start();
         }
       }, 1000);
     };
