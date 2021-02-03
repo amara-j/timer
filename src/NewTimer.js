@@ -24,9 +24,9 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
-        <h1>Count down from 100</h1>
+        <h1>Count down from {this.props.countTo}</h1>
         <h2>It's been {this.state.timeElapsed} seconds</h2>
-        <h2>Countdown: {100 - this.state.timeElapsed}</h2>
+        <h2>Countdown: {this.props.countTo - this.state.timeElapsed}</h2>
       </div>
     );
   }
