@@ -35,10 +35,11 @@
 .countdownDiv {
   position: absolute;
   /* abstract height & width pls! */
-  height: 616px;
-  width: 616px;
-  top: 45%;
-  left: 25%;
+  height: 100px;
+  width: 100px;
+  background-color: gray;
+  top: 0;
+  left: 0;
 }
 
 .setTimerForm {

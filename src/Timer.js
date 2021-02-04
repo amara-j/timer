@@ -45,10 +45,16 @@ class Timer extends React.Component {
     }
   }
 
+  formatSecsToHHMMSS(secs) {
+    return new Date(secs * 1000).toISOString().substr(11, 8);
+  }
+
   render() {
     return (
       <div>
-        <div className="countdownDiv">{this.state.countdown}</div>
+        <div className="countdownDiv">
+          {this.formatSecsToHHMMSS(this.state.countdown)}
+        </div>
         <CircleAnimation percentDone={this.state.percentage} />
       </div>
     );
