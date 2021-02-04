@@ -7,7 +7,7 @@ const CircleBorder = () => {
 
   return (
     <svg
-      className="circle-border-container"
+      className="circle-container"
       height={circleContainerSize}
       width={circleContainerSize}
     >
