@@ -48,7 +48,7 @@ const App = () => {
                   ref={inputMinutes}
                   min="0"
                   max="59"
-                  defaultValue="0"
+                  defaultValue="6"
                 />
                 {"mins  "}
               </label>
@@ -59,7 +59,7 @@ const App = () => {
                   ref={inputSeconds}
                   min="0"
                   max="59"
-                  defaultValue="0"
+                  defaultValue="30"
                 />
                 {"secs "}
               </label>
@@ -73,43 +73,6 @@ const App = () => {
           Stop
         </button>
       ) : null}
-      {/* <div className="control-panel">
-        <form id="timerInputForm" onSubmit={handleSubmit}>
-          <label>
-            <input
-              className="timerInput"
-              type="number"
-              ref={inputHours}
-              min="0"
-              max="23"
-              defaultValue="00"
-            />
-            :
-          </label>
-          <label>
-            <input
-              className="timerInput"
-              type="number"
-              ref={inputMinutes}
-              min="0"
-              max="59"
-              defaultValue="00"
-            />
-            :
-          </label>
-          <label>
-            <input
-              className="timerInput"
-              type="number"
-              ref={inputSeconds}
-              min="0"
-              max="59"
-              defaultValue="00"
-            />{" "}
-          </label>
-          <input id="startButton" type="submit" value="Start" />
-        </form>
-      </div> */}
     </div>
   );
 };
