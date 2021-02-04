@@ -37,7 +37,7 @@ const App = () => {
                   ref={inputHours}
                   min="0"
                   max="23"
-                  defaultValue="0"
+                  defaultValue="00"
                 />
                 {"hrs  "}
               </label>
@@ -48,7 +48,7 @@ const App = () => {
                   ref={inputMinutes}
                   min="0"
                   max="59"
-                  defaultValue="6"
+                  defaultValue="00"
                 />
                 {"mins  "}
               </label>
@@ -59,7 +59,7 @@ const App = () => {
                   ref={inputSeconds}
                   min="0"
                   max="59"
-                  defaultValue="30"
+                  defaultValue="05"
                 />
                 {"secs "}
               </label>

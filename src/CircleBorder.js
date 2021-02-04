@@ -2,7 +2,7 @@ import "./App.css";
 
 const CircleBorder = (props) => {
   const radius = 300;
-  const strokeWidth = 4;
+  const strokeWidth = 8;
   const circleContainerSize = 2 * radius + 4 * strokeWidth;
   return (
     <svg
@@ -14,9 +14,9 @@ const CircleBorder = (props) => {
         className="circle-border"
         cx="50%"
         cy="50%"
-        r={radius - strokeWidth - 1}
+        r={radius}
         fill="none"
-        stroke="black"
+        stroke="white"
         strokeWidth={strokeWidth}
       />
 
@@ -24,7 +24,7 @@ const CircleBorder = (props) => {
         x="50%"
         y="50%"
         textAnchor="middle"
-        fill="black"
+        fill="white"
         fontSize="90px"
         dy=".3em"
       >

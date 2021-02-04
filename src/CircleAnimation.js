@@ -3,7 +3,7 @@ import "./App.css";
 const CircleAnimation = (props) => {
   const radius = 300;
   const circumference = 2 * Math.PI * radius;
-  const strokeWidth = 4;
+  const strokeWidth = 8;
   const circleContainerSize = 2 * radius + 4 * strokeWidth;
 
   return (
@@ -18,7 +18,7 @@ const CircleAnimation = (props) => {
         cy="50%"
         r={radius}
         fill="none"
-        stroke="#2CC8DD"
+        stroke="#d10892"
         strokeWidth={strokeWidth}
         strokeDasharray={`${circumference} ${circumference}`}
         strokeDashoffset={circumference * (1 - props.percentDone)}
