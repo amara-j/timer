@@ -7,8 +7,8 @@
 .circle-container {
   position: absolute;
   align-items: center;
-  left: 30%;
-  top: 5%;
+  left: 200px;
+  top: 20px;
   z-index: -1;
 }
 
@@ -29,19 +29,10 @@
   z-index: -1;
 }
 
-/* .countdownDiv {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  background-color: gray;
-  top: 0;
-  left: 0;
-} */
-
 .control-panel {
   position: relative;
-  top: 200px;
-  left: 300px;
+  top: 300px;
+  left: 250px;
   align-items: center;
 }
 
@@ -81,9 +72,3 @@ input[type="number"] {
   top: 300px;
   left: -250px;
 }
-
-/* .timerInput {
-  width: 30px;
-  border: none;
-  user-select: none;
-} */
