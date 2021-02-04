@@ -1,7 +1,7 @@
 import "./App.css";
 
 const CircleBorder = (props) => {
-  const radius = 250;
+  const radius = 300;
   const strokeWidth = 4;
   const circleContainerSize = 2 * radius + 4 * strokeWidth;
   return (

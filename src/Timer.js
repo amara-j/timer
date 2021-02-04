@@ -26,7 +26,7 @@ class Timer extends React.Component {
       } else {
         clearInterval(this.timerInterval);
         this.setState({ countdown: "Timer done!", percentage: 1 });
-        Transport.start();
+        // Transport.start();
       }
     }, 1000);
   }

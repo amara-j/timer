@@ -28,6 +28,44 @@ const App = () => {
       ) : (
         <div className="circle-container">
           <CircleBorder />
+          <div className="control-panel">
+            <form id="timerInputForm" onSubmit={handleSubmit}>
+              <label>
+                <input
+                  className="timerInput"
+                  type="number"
+                  ref={inputHours}
+                  min="0"
+                  max="23"
+                  defaultValue="0"
+                />
+                {"hrs  "}
+              </label>
+              <label>
+                <input
+                  className="timerInput"
+                  type="number"
+                  ref={inputMinutes}
+                  min="0"
+                  max="59"
+                  defaultValue="0"
+                />
+                {"mins  "}
+              </label>
+              <label>
+                <input
+                  className="timerInput"
+                  type="number"
+                  ref={inputSeconds}
+                  min="0"
+                  max="59"
+                  defaultValue="0"
+                />
+                {"secs "}
+              </label>
+              <input id="startButton" type="submit" value="Start" />
+            </form>
+          </div>
         </div>
       )}
       {timerIsSet ? (
@@ -35,7 +73,7 @@ const App = () => {
           Stop
         </button>
       ) : null}
-      <div className="control-panel">
+      {/* <div className="control-panel">
         <form id="timerInputForm" onSubmit={handleSubmit}>
           <label>
             <input
@@ -43,7 +81,7 @@ const App = () => {
               type="number"
               ref={inputHours}
               min="0"
-              max="60"
+              max="23"
               defaultValue="00"
             />
             :
@@ -54,7 +92,7 @@ const App = () => {
               type="number"
               ref={inputMinutes}
               min="0"
-              max="60"
+              max="59"
               defaultValue="00"
             />
             :
@@ -65,13 +103,13 @@ const App = () => {
               type="number"
               ref={inputSeconds}
               min="0"
-              max="60"
+              max="59"
               defaultValue="00"
             />{" "}
           </label>
-          <input type="submit" value="Start" />
+          <input id="startButton" type="submit" value="Start" />
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -40,7 +40,8 @@
 
 .control-panel {
   position: relative;
-  top: 600px;
+  top: 200px;
+  left: 300px;
   align-items: center;
 }
 
@@ -65,13 +66,20 @@ input[type="submit"] {
 }
 
 #timerInputForm {
-  font-size: 100px;
+  font-size: 50px;
 }
 
 input[type="number"] {
   font-size: 50px;
-  width: 100px;
+  width: 70px;
   border: none;
+  user-select: none;
+}
+
+#startButton {
+  position: relative;
+  top: 300px;
+  left: -250px;
 }
 
 /* .timerInput {

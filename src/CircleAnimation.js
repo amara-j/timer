@@ -1,7 +1,7 @@
 import "./App.css";
 
 const CircleAnimation = (props) => {
-  const radius = 250;
+  const radius = 300;
   const circumference = 2 * Math.PI * radius;
   const strokeWidth = 4;
   const circleContainerSize = 2 * radius + 4 * strokeWidth;
