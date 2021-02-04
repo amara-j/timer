@@ -23,7 +23,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <CircleBorder />
+      {timerIsSet ? (
+        <Timer dateOnLoad={dateOnLoad} countTo={countTo} />
+      ) : (
+        <div>
+          <CircleBorder />
+        </div>
+      )}
+
       {timerIsSet ? (
         <button className="stopButton" onClick={() => updateTimerIsSet(false)}>
           Stop
@@ -66,7 +73,6 @@ const App = () => {
           <input type="submit" value="Start" />
         </form>
       )}
-      {timerIsSet ? <Timer dateOnLoad={dateOnLoad} countTo={countTo} /> : null}
     </div>
   );
 };
