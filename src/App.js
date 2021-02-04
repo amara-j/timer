@@ -34,46 +34,45 @@ const App = () => {
         <button className="stopButton" onClick={() => updateTimerIsSet(false)}>
           Stop
         </button>
-      ) : (
-        <div class="control-panel">
-          <form id="control-panel" onSubmit={handleSubmit}>
-            <label>
-              <input
-                className="timerInput"
-                type="number"
-                ref={inputHours}
-                min="0"
-                max="60"
-                defaultValue="0"
-              />
-              h
-            </label>
-            <label>
-              <input
-                className="timerInput"
-                type="number"
-                ref={inputMinutes}
-                min="0"
-                max="60"
-                defaultValue="0"
-              />
-              m
-            </label>
-            <label>
-              <input
-                className="timerInput"
-                type="number"
-                ref={inputSeconds}
-                min="0"
-                max="60"
-                defaultValue="0"
-              />{" "}
-              s
-            </label>
-            <input type="submit" value="Start" />
-          </form>
-        </div>
-      )}
+      ) : null}
+      <div className="control-panel">
+        <form onSubmit={handleSubmit}>
+          <label>
+            <input
+              className="timerInput"
+              type="number"
+              ref={inputHours}
+              min="0"
+              max="60"
+              defaultValue="0"
+            />
+            h
+          </label>
+          <label>
+            <input
+              className="timerInput"
+              type="number"
+              ref={inputMinutes}
+              min="0"
+              max="60"
+              defaultValue="0"
+            />
+            m
+          </label>
+          <label>
+            <input
+              className="timerInput"
+              type="number"
+              ref={inputSeconds}
+              min="0"
+              max="60"
+              defaultValue="0"
+            />{" "}
+            s
+          </label>
+          <input type="submit" value="Start" />
+        </form>
+      </div>
     </div>
   );
 };

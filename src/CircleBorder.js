@@ -1,10 +1,9 @@
 import "./App.css";
 
-const CircleBorder = () => {
+const CircleBorder = (props) => {
   const radius = 250;
   const strokeWidth = 4;
   const circleContainerSize = 2 * radius + 4 * strokeWidth;
-
   return (
     <svg
       className="circle-container"
@@ -20,6 +19,17 @@ const CircleBorder = () => {
         stroke="black"
         strokeWidth={strokeWidth}
       />
+
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        fill="black"
+        fontSize="100px"
+        dy=".3em"
+      >
+        {props.countdownText}
+      </text>
     </svg>
   );
 };

@@ -56,11 +56,10 @@ class Timer extends React.Component {
   render() {
     return (
       <div className="circle-container">
-        <CircleBorder />
+        <CircleBorder
+          countdownText={this.formatSecsToHHMMSS(this.state.countdown)}
+        />
         <CircleAnimation percentDone={this.state.percentage} />
-        <div className="countdownDiv">
-          {this.formatSecsToHHMMSS(this.state.countdown)}
-        </div>
       </div>
     );
   }
