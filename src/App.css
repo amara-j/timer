@@ -64,6 +64,16 @@ input[type="submit"] {
   font-size: 30px;
 }
 
+#timerInputForm {
+  font-size: 100px;
+}
+
+input[type="number"] {
+  font-size: 50px;
+  width: 100px;
+  border: none;
+}
+
 /* .timerInput {
   width: 30px;
   border: none;

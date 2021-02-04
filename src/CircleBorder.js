@@ -25,7 +25,7 @@ const CircleBorder = (props) => {
         y="50%"
         textAnchor="middle"
         fill="black"
-        fontSize="100px"
+        fontSize="90px"
         dy=".3em"
       >
         {props.countdownText}

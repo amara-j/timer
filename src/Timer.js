@@ -26,7 +26,7 @@ class Timer extends React.Component {
       } else {
         clearInterval(this.timerInterval);
         this.setState({ countdown: "Timer done!", percentage: 1 });
-        // Transport.start();
+        Transport.start();
       }
     }, 1000);
   }
@@ -48,8 +48,10 @@ class Timer extends React.Component {
   }
 
   formatSecsToHHMMSS(secs) {
-    if (this.state.countdown > 1) {
+    if (this.state.countdown > 0) {
       return new Date(secs * 1000).toISOString().substr(11, 8);
+    } else {
+      return "Timer done!";
     }
   }
 
