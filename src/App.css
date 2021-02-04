@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 .circle-border {
   height: 25px;
@@ -11,14 +12,14 @@
 
 .circle-border-container {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 25%;
   z-index: -1;
 }
 
 .progress-ring-circle-container {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 25%;
   z-index: -1;
 }
@@ -67,9 +68,11 @@
 }
 
 input[type="submit"] {
+  position: absolute;
   width: 100px;
   height: 100px;
   background: url("./button.svg") no-repeat center;
   border: none;
   font-size: 30px;
+  top: 300%;
 }

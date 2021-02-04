@@ -46,7 +46,9 @@ class Timer extends React.Component {
   }
 
   formatSecsToHHMMSS(secs) {
-    return new Date(secs * 1000).toISOString().substr(11, 8);
+    if (this.state.countdown > 1) {
+      return new Date(secs * 1000).toISOString().substr(11, 8);
+    }
   }
 
   render() {
