@@ -1,5 +1,4 @@
 import React from "react";
-import { Synth, Loop, Transport } from "tone";
 import CircleAnimation from "./CircleAnimation.js";
 import CircleBorder from "./CircleBorder.js";
 
@@ -13,11 +12,9 @@ class Timer extends React.Component {
       percentage: 0,
       timerIsSet: this.props.timerIsSet,
     };
-    const synth = new Synth().toDestination();
-    new Loop(() => {
-      synth.triggerAttackRelease("C7", "8n");
-    }, "2n").start(0);
   }
+
+  // audio = new Audio("/beep.mp3");
 
   componentDidMount() {
     this.timerInterval = setInterval(() => {
@@ -26,13 +23,13 @@ class Timer extends React.Component {
       } else {
         clearInterval(this.timerInterval);
         this.setState({ countdown: "Timer done!", percentage: 1 });
-        // Transport.start();
+        // audio.loop = true;
+        // audio.play();
       }
     }, 1000);
   }
 
   componentWillUnmount() {
-    Transport.stop();
     clearInterval(this.timerInterval);
   }
 

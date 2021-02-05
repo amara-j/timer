@@ -19,12 +19,23 @@ const CircleBorder = (props) => {
         stroke="white"
         strokeWidth={strokeWidth}
       />
+      <circle
+        className="circle-border"
+        cx="50%"
+        cy="50%"
+        r={radius + strokeWidth / 2 + 1}
+        fill="none"
+        stroke="#ffb700"
+        strokeWidth="2"
+      />
 
       <text
         x="50%"
         y="50%"
         textAnchor="middle"
         fill="white"
+        stroke="#d10892"
+        strokeWidth="2"
         fontSize="90px"
         dy=".3em"
       >
