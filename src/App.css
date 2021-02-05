@@ -55,6 +55,7 @@ input[type="submit"] {
 #timerInputForm {
   font-size: 50px;
   color: white;
+  text-shadow: 2px 2px 2px #d10892;
 }
 
 input[type="number"] {
@@ -64,6 +65,7 @@ input[type="number"] {
   border: none;
   user-select: none;
   color: white;
+  text-shadow: 2px 2px 2px #d10892;
 }
 
 #startButton {
