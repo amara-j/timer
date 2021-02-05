@@ -14,7 +14,7 @@ class Timer extends React.Component {
     };
   }
 
-  // audio = new Audio("/beep.mp3");
+  audio = new Audio("/beep.mp3");
 
   componentDidMount() {
     this.timerInterval = setInterval(() => {
@@ -23,14 +23,15 @@ class Timer extends React.Component {
       } else {
         clearInterval(this.timerInterval);
         this.setState({ countdown: "Timer done!", percentage: 1 });
-        // audio.loop = true;
-        // audio.play();
+        this.audio.loop = true;
+        this.audio.play();
       }
     }, 1000);
   }
 
   componentWillUnmount() {
     clearInterval(this.timerInterval);
+    this.audio.pause();
   }
 
   tick() {
