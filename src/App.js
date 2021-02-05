@@ -1,7 +1,7 @@
 import "./App.css";
 import Timer from "./Timer.js";
 import CircleBorder from "./CircleBorder.js";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const App = () => {
   const dateOnLoad = new Date();
@@ -10,6 +10,10 @@ const App = () => {
   const inputHours = useRef(null);
   const [timerIsSet, updateTimerIsSet] = useState(false);
   const [countTo, updateCountTo] = useState(0);
+
+  useEffect(() => {
+    document.title = "Timer";
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +52,7 @@ const App = () => {
                   ref={inputMinutes}
                   min="0"
                   max="59"
-                  defaultValue="00"
+                  defaultValue="02"
                 />
                 {"mins  "}
               </label>
@@ -59,7 +63,7 @@ const App = () => {
                   ref={inputSeconds}
                   min="0"
                   max="59"
-                  defaultValue="03"
+                  defaultValue="00"
                 />
                 {"secs "}
               </label>
